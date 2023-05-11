@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-stories:any[]=[];
-  constructor() {}
-  
+word:string="";
+  constructor(private router:Router) {}
+
+  search() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        word: this.word
+      }
+    };
+    this.router.navigate(["result"], navigationExtras);
+  }
 }

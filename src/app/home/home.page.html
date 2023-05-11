@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Dictionary
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,11 +9,13 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Dictionary</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
- <h3>Welcome to Mobile Apps Starter project 2023</h3>
+    <ion-input placeholder="Search" [(ngModel)]="word"></ion-input>
+    <ion-button size="large" (click)="search()">Search</ion-button>
+    <ion-button size="large" routerLink="/history">History</ion-button>
   </div>
 </ion-content>

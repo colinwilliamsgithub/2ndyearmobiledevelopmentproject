@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Search</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-button size="large" routerLink="/home">Home</ion-button>
+    <ion-button size="large" routerLink="/history">History</ion-button>
+    <ion-button size="large" (click)="add()">+ Add</ion-button>
+  </div>
+
+  <div *ngFor="let d of myDictionary; let i = index">
+    <h3>{{i+1}}. {{d.word}}</h3>
+    <ul>
+      <li *ngFor="let definition of d.meanings[0].definitions">
+        <h4>{{definition.definition}}</h4>
+      </li>
+    </ul>
+  </div>
+</ion-content>
