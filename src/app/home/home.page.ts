@@ -10,6 +10,7 @@ export class HomePage {
 word:string="";
   constructor(private router:Router) {}
 
+  //navigate to the result page and pass the search term
   search() {
     const navigationExtras: NavigationExtras = {
       queryParams: {

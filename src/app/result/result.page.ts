@@ -17,9 +17,12 @@ export class ResultPage {
   constructor(private service: DictionaryService, private route:ActivatedRoute, private storage:Storage) { }
   
   async ionViewWillEnter() {
+    //set up storage for the component
     await this.storage.create();
 
+    //get the word passed to the component
     this.word = this.route.snapshot.queryParams['word'];
+    //call the dictionary service to get the word definitions
     this.service.GetDictionaryData(this.word).subscribe(
       (data) => {
         this.myDictionary = data;
@@ -27,6 +30,7 @@ export class ResultPage {
     );
   }
 
+  //add the word to the history and update persisted storage
   async add() {
     let history: string[] = await this.storage.get("history");
     if(history == null)

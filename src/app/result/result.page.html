@@ -11,12 +11,14 @@
     </ion-toolbar>
   </ion-header>
 
+  <!--buttons allowing the user to navigate through the pages, aswell as to add a word to storage-->
   <div id="container">
-    <ion-button size="large" routerLink="/home">Home</ion-button>
-    <ion-button size="large" routerLink="/history">History</ion-button>
-    <ion-button size="large" (click)="add()">+ Add</ion-button>
+    <ion-button size="medium" routerLink="/home">Home</ion-button>
+    <ion-button size="medium" routerLink="/history">History</ion-button>
+    <ion-button size="medium" (click)="add()">+ Add</ion-button>
   </div>
 
+  <!--prints the word entered by the user followed by it's definition-->
   <div *ngFor="let d of myDictionary; let i = index">
     <h3>{{i+1}}. {{d.word}}</h3>
     <ul>
